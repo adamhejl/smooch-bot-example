@@ -2,6 +2,8 @@
 
 const Script = require('smooch-bot').Script;
 
+const scriptRules = require('./script.json');
+
 module.exports = new Script({
     processing: {
         prompt: (bot) => bot.say('Beep boop...'),
