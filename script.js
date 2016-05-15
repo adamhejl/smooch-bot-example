@@ -28,11 +28,11 @@ module.exports = new Script({
     },
     
         askCoffee: {
-        prompt: (bot) => bot.say('So ${name}, do you want coffee today?'),
+        prompt: (bot) => bot.say('Do you want coffee today?'),
         receive: (bot, message) => {
-            const email = message.text;
-            return bot.setProp('email', email)
-                .then(() => bot.say(`Cool! I'll ping you at ${email} if there are any problems`))
+            const coffee = message.text;
+            return bot.getProp('name')
+                .then(() => bot.say(`Doesn't matter what you say ${name} you are getting a coffee!`))
                 .then(() => 'finish');
         }
     },
