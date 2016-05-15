@@ -23,9 +23,17 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
                 .then(() => bot.say(`Great! I'll call you ${name}`))
-                .then(() => 'finish');
+                .then(() => 'askCoffee');
         }
     },
+    
+        askCoffee: {
+        prompt: (bot) => bot.say('So ${name}, do you want coffee today?'),
+        receive: (bot, message) => {
+            const email = message.text;
+            return bot.setProp('email', email)
+                .then(() => bot.say(`Cool! I'll ping you at ${email} if there are any problems`))
+                .then(() => 'finish');
 
     finish: {
         receive: (bot, message) => {
