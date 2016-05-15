@@ -34,6 +34,8 @@ module.exports = new Script({
             return bot.setProp('email', email)
                 .then(() => bot.say(`Cool! I'll ping you at ${email} if there are any problems`))
                 .then(() => 'finish');
+        }
+    },
 
     finish: {
         receive: (bot, message) => {
